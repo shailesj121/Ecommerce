@@ -1,0 +1,10 @@
+# Node.js
+node_modules/
+*.log
+.env
+
+
+# Dependency Locks
+package-lock.json
+yarn.lock
+pnpm-lock.yaml

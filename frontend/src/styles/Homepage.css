@@ -1,0 +1,153 @@
+.full-width-banner {
+  position: relative;
+  text-align: center;
+  height: 60vh;
+  margin-bottom: 20px;
+}
+
+.banner-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.carousel-container {
+  background: linear-gradient(90deg, #bb95d3, #cbd1B0, #40B0D0); /* Corrected G to 4 */
+  height: 300px; /* Set a height for the carousel */
+  overflow: hidden; /* Prevent overflow issues */
+  display: flex; /* Added to center the images */
+
+}
+
+.carousel-image {
+  width: 60%; /* Full width of the container */
+  height: 50%; /* Maintain aspect ratio */
+  max-height: 300px; /* Set a max height to prevent overflow */
+}
+
+
+
+.legend {
+  font-weight: bold;
+  text-align: center;
+  background-color: rgba(59, 8, 8, 0.8); /* Optional: Add background for better readability */
+  padding: 10px;
+}
+
+
+.filters-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.filter {
+  margin-bottom: 10px;
+}
+
+.reset-btn {
+  align-self: flex-start;
+}
+
+.products-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.card {
+  width: 30%;
+  margin-bottom: 20px;
+}
+
+.home-page h1 {
+  color: gray;
+  font-family: "Playfair Display", serif;
+}
+
+.home-page {
+  display: flex;
+  flex-wrap: wrap;
+}
+.home-page .card {
+  background-color: rgba(128, 128, 128, 0.097);
+  width: 18rem;
+}
+.home-page .card-name-price {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.home-page .card-price {
+  color: green;
+  font-weight: bold;
+}
+.home-page button {
+  border-radius: 0;
+  width: 100%;
+  border-top-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.home-page .card-text {
+  color: rgb(90, 89, 89);
+}
+
+.home-page .card img:hover {
+  transform: scale(0.9);
+}
+
+.home-page .card-img-top {
+  height: 300px !important;
+}
+/* ==================
+filters
+============== */
+.filters h4 {
+  margin-top: 100px;
+  color: gray !important;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.337);
+}
+
+.ant-checkbox-wrapper:first-of-type {
+  margin-left: 8px;
+}
+
+.ant-checkbox-wrapper {
+  margin: 2px;
+}
+.ant-radio-wrapper {
+  margin-bottom: 5px !important;
+  margin-left: 10px;
+}
+
+.filters button {
+  background-color: black;
+  width: 100%;
+  border: none;
+  border-radius: 0;
+  margin-top: 20px;
+}
+
+.loadmore {
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+}
+
+.loadmore:hover {
+  background-color: #45a049;
+}
