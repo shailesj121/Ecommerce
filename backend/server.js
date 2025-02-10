@@ -12,7 +12,7 @@ import RazorpayFn from "./routes/paymentRazorpay.js";
 dotenv.config();
 
 // Database connection
-connectDB();
+
 
 // Create Express app
 const app = express();
@@ -41,9 +41,12 @@ app.get("/", (req, res) => {
 const PORT = process.env.PORT || 8080;
 
 // Start the server
-app.listen(PORT, () => {
+connectDB().then(()=> {;app.listen(PORT || 4000, () => {
   console.log(
     `Server Running on ${process.env.DEV_MODE} mode on port ${PORT}`.bgCyan.white
   );
 });
+})  .catch((error) => {
+console.log(`error connecting to database ${error}`);
+})
 
