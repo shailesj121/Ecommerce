@@ -5,6 +5,8 @@ import { useNavigate, useLocation } from "react-router-dom";
 import toast from "react-hot-toast";
 import "../../styles/AuthStyles.css";
 import { useAuth } from "../../context/auth";
+const baseUrl = "https://ecommercebackend-self.vercel.app"
+
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -17,7 +19,7 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post('http://localhost:8080/api/v1/auth/login', {
+      const res = await axios.post(`${baseUrl}/api/v1/auth/login`, {
         email,
         password,
       });

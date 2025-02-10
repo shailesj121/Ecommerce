@@ -1,13 +1,15 @@
 import axios from "axios";
 
 function useRazorpay() {
+  const baseUrl = "https://ecommercebackend-self.vercel.app"
+
     
   const startRazorpay = async (event, amount, productsId) => {
     event.preventDefault(); // Ensure event is handled properly
     const getProductsId = await productsId
     const amountInPaise = amount * 100;
     try {
-      const res = await axios.post("http://localhost:8080/razorpay/payment", {
+      const res = await axios.post(`${baseUrl}/razorpay/payment`, {
         amount: amountInPaise,
       });
       console.log(res)
@@ -29,7 +31,7 @@ function useRazorpay() {
           order_id: id,
           handler: async function (response) {
             const paymentRes = await axios.post(
-              "http://localhost:8080/razorpay/checkPayment",
+              `${baseUrl}/razorpay/checkPayment`,
               { response, userId, getProductsId}
             );
             if (paymentRes.data.success) {

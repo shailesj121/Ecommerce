@@ -8,6 +8,8 @@ import axios from "axios";
 import toast from "react-hot-toast";
 import useRazorpay from "../hooks/useRaxzorpay";
 
+const baseUrl = "https://ecommercebackend-self.vercel.app"
+
 
 
 const CartPage = () => {
@@ -61,7 +63,7 @@ const CartPage = () => {
   // Get payment gateway token
   const getToken = async () => {
     try {
-      const { data } = await axios.get("http://localhost:8080/api/v1/product/braintree/token");
+      const { data } = await axios.get(`${baseUrl}/api/v1/product/braintree/token`);
       console.log("Client Token:", data?.clientToken); // Debug log
       setClientToken(data?.clientToken);
     } catch (error) {
@@ -79,7 +81,7 @@ const CartPage = () => {
     try {
       setLoading(true);
       const { nonce } = await instance.requestPaymentMethod();
-      const { data } = await axios.post("http://localhost:8080/api/v1/product/braintree/payment", {
+      const { data } = await axios.post(`${baseUrl}/api/v1/product/braintree/payment`, {
         nonce,
         cart,
       });
@@ -117,7 +119,7 @@ const CartPage = () => {
               <div className="row mb-2 p-3 card flex-row" key={p._id}>
                 <div className="col-md-4">
                   <img
-                    src={`http://localhost:8080/api/v1/product/product-photo/${p._id}`}
+                    src={`${baseUrl}/api/v1/product/product-photo/${p._id}`}
                     className="card-img-top"
                     alt={p.name}
                     width="100px"

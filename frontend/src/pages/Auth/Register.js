@@ -12,12 +12,13 @@ const Register = () => {
   const [address, setAddress] = useState("");
   const [answer, setAnswer] = useState("");
   const navigate = useNavigate();
+  const baseUrl = "https://ecommercebackend-self.vercel.app"
 
   // form function
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post('http://localhost:8080/api/v1/auth/register', {
+      const res = await axios.post(`${baseUrl}/api/v1/auth/register`, {
         name,
         email,
         password,

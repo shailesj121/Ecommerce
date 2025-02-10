@@ -23,11 +23,14 @@ const Profile = () => {
     setAddress(address);
   }, [auth?.user]);
 
+  const baseUrl = "https://ecommercebackend-self.vercel.app"
+
+
   // form function
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const { data } = await axios.put('http://localhost:8080/api/v1/auth/profile', {
+      const { data } = await axios.put(`${baseUrl}/api/v1/auth/profile`, {
         name,
         email,
         password,
