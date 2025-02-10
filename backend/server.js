@@ -1,5 +1,4 @@
 import express from "express";
-import colors from "colors";
 import dotenv from "dotenv";
 import morgan from "morgan";
 import connectDB from "./config/db.js";
@@ -25,15 +24,17 @@ app.use(express.urlencoded({ limit: '10mb', extended: true }));
 app.use(morgan("dev"));
 
 // Routes
-app.get("/", (req, res) => {
-res.send("API is running....");
-})
+
 app.use("/api/v1/auth", authRoutes);
 app.use("/api/v1/category", categoryRoutes);
 app.use("/api/v1/product", productRoutes);
 
 // Root endpoint
 app.use("/razorpay", RazorpayFn);
+
+app.get("/", (req, res) => {
+  res.send("API is running....");
+  })
 
 
 // Port configuration
