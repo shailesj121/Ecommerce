@@ -25,6 +25,9 @@ app.use(express.urlencoded({ limit: '10mb', extended: true }));
 app.use(morgan("dev"));
 
 // Routes
+app.get("/", (req, res) => {
+res.send("API is running....");
+})
 app.use("/api/v1/auth", authRoutes);
 app.use("/api/v1/category", categoryRoutes);
 app.use("/api/v1/product", productRoutes);
