@@ -11,7 +11,6 @@ import RazorpayFn from "./routes/paymentRazorpay.js";
 // Configure environment variables
 dotenv.config();
 
-// Database connection
 
 
 // Create Express app
